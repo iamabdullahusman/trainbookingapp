@@ -1,0 +1,68 @@
+body{
+    height: 100%;
+}
+
+.layout{
+    height: 100%;
+}
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+
+  nz-content {
+    margin: 0 16px;
+    height: 100%;
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+  }
+
+  nz-footer {
+    text-align: center;
+  }
+
+nz-sider{
+  background-color: aliceblue;
+}
+span{
+  width: 160%;
+  font-size: 18px;
+}
+.custom-navbar{
+  background-color: #003973;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+.navbar-title{
+  >a {
+      color: white !important;
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bolder;
+  }
+}
+.nav-links{
+  display: flex;
+  align-items: center;
+
+  a{
+      color: white;
+      margin-left: 15px;
+  }
+}
+}

@@ -1,0 +1,63 @@
+<div class="container-fluid bg-secondary p-4">
+    <div class="row">
+        <div class="col-4 px-4">
+            <select class="form-select" [(ngModel)]="searchObj.fromStationId">
+                <option value="">Select From Station</option>
+                <option *ngFor="let station of stationList" [value]="station.stationID">{{station.stationName}}</option>
+            </select>
+        </div>
+        <div class="col-4 px-4">
+            <select class="form-select" [(ngModel)]="searchObj.toStationId">
+                <option value=""> Select To Station </option>
+                <option *ngFor="let station of stationList" [value]="station.stationID">{{station.stationName}}</option>
+            </select>
+        </div>
+        <div class="col-2 px-2">
+            <input type="text" [(ngModel)]="searchObj.dateOfTravel" class="form-control" />
+        </div>
+        <div class="col-2 text-end">
+            <button type="button" class="btn btn-primary btn-sm" (click)="getAllTrains()">Modify Search</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-2">
+    <p style="border: 1px solid;padding: 5px;margin-top: 5px;"><strong>{{trainsList.length}}</strong> Result Found For
+        <strong>Pune</strong>
+        to <strong>Nagpur</strong> on 12-12-2023</p>
+    <div class="row">
+        <ng-container *ngIf="trainsList.length ==0">
+            <div class="col-12">
+                <p>No Trains Available, Please Check All trains API data .</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="trainsList.length !==0">
+            <div class="col-6 mt-2"  *ngFor="let train of trainsList">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        {{train.trainName}}
+                    </div>
+                    <div class="card-body">
+                        <div class="row pb-2">
+                            <div class="col-5">
+                                {{train.departureTime}} | {{train.departureStationName}} | {{train.departureDate|date:'dd-MMM-yy'}}
+                            </div>
+                            <div class="col-2">
+                                15:05 hrs
+                            </div>
+                            <div class="col-5 text-end">
+                               {{train.arrivalTime}} | {{train.arrivalStationName}} |{{train.departureDate |date:'dd-MMM-yy'}}
+                            </div>
+                        </div>
+                        <button *ngIf="train.bookedSeats !== train.totalSeats" (click)="openBooking(train.trainId)" class="btn btn-success btn-sm"  data-bs-toggle="modal" data-bs-target="#myModal">Book
+                            Now</button>
+                      
+                    </div>
+                    
+                </div>
+            </div> 
+        </ng-container>
+       
+    </div>
+</div>
+
+

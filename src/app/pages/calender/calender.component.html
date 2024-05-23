@@ -1,0 +1,67 @@
+<!-- NG-ZORRO -->
+<!-- <a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
+  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
+</a> -->
+
+<h1 style="font-weight: bold; text-align: center; color: brown;">Calender</h1>
+
+<nz-calendar>
+  <ul *nzDateCell="let date" class="events">
+    @switch (date.getDate()) {
+      @case (2) {
+        @for (item of listDataMap.two; track $index) {
+        <li (click)="showLeavePlanModal(item.content , date)">
+          <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+        </li>
+        }
+        }
+    @case (8) {
+    @for (item of listDataMap.eight; track $index) {
+    <li (click)="showLeavePlanModal(item.content , date)">
+      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+    </li>
+    }
+    }
+    @case (9) {
+      @for (item of listDataMap.nine; track $index) {
+      <li (click)="showLeavePlanModal(item.content , date)">
+        <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+      </li>
+      }
+      }
+      @case (10) {
+        @for (item of listDataMap.ten; track $index) {
+        <li (click)="showLeavePlanModal(item.content , date)">
+          <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+        </li>
+        }
+        }
+    @case (11) {
+    @for (item of listDataMap.eleven; track $index) {
+    <li (click)="showLeavePlanModal(item.content , date)">
+      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+    </li>
+    }
+    }
+    @case (20) {
+    @for (item of listDataMap.twenty; track $index) {
+    <li (click)="showLeavePlanModal(item.content , date)">
+      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+    </li>
+    }
+    }
+    }
+  </ul>
+  <ng-container *nzMonthCell="let month">
+    @if (getMonthData(month); as monthData) {
+    <div class="notes-month">
+      <section>{{ monthData }}</section>
+      <span>Backlog number</span>
+    </div>
+    }
+  </ng-container>
+  <!-- <button nz-button nzType="primary" (click)="showLeavePlanModal()">Displaying Leave Plan</button> -->
+
+</nz-calendar>
+
+<router-outlet></router-outlet>

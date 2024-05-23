@@ -1,0 +1,21 @@
+.flex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abc{
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+nz-card{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+}

@@ -1,0 +1,23 @@
+<nz-table #basicTable [nzData]="bookings">
+    <thead>
+      <tr>
+        <th>Train Name</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Departure Station</th>
+        <th>Arrival Station</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of basicTable.data">
+        <td>{{ booking.trainName }}</td>
+        <td>{{ booking.departureTime }}</td>
+        <td>{{ booking.arrivalTime }}</td>
+        <td>{{ booking.departureStation }}</td>
+        <td>{{ booking.arrivalStation }}</td>
+        <!-- Add more columns as needed -->
+      </tr>
+    </tbody>
+  </nz-table>
+  
